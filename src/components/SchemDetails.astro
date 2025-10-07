@@ -103,7 +103,8 @@ const fileUrl = await getSchemUrl(uuid);
 	}
 
 	function handleDownload() {
-		const filePath = this.dataset.file;
+		const fileUrl = this.dataset.file
+		const filePath = `${window.location.origin}/${fileUrl}`;
 
 		fetch(filePath).then((res) => {
 			if (res.ok) {
